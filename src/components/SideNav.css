@@ -82,3 +82,30 @@
     display: none;
   }
 }
+
+.top-dot {
+  background: transparent !important;
+  border: 1.5px solid rgba(129, 140, 248, 0.4) !important;
+  position: relative;
+}
+
+.top-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 5px solid var(--dot-inactive-border);
+}
+
+.side-nav-top:hover .top-dot {
+  border-color: #818cf8 !important;
+}
+
+.side-nav-top:hover .top-dot::after {
+  border-bottom-color: #818cf8;
+}

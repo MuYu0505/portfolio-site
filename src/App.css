@@ -68,28 +68,3 @@
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.6), transparent);
 }
-
-.back-to-top {
-  position: fixed;
-  bottom: 120px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 110;
-  transition: border-color 0.3s, color 0.3s, background 0.3s;
-}
-
-.back-to-top:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--bg-card-hover);
-}
