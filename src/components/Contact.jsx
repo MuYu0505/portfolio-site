@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiSend, FiCopy, FiExternalLink } from 'react-icons/fi'
+import emailjs from '@emailjs/browser'
 import { showToast } from './Toast'
 import siteConfig from '../config'
 import './Contact.css'
@@ -51,20 +52,23 @@ export default function Contact() {
 
     setSubmitting(true)
     try {
-      const res = await fetch('https://portfolio-site-l6mj.onrender.com/api/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (res.ok) {
-        showToast('消息已发送成功！')
-        setForm({ name: '', email: '', subject: '', message: '' })
-      } else {
-        const data = await res.json().catch(() => ({}))
-        showToast(data.error || '发送失败，请稍后重试')
-      }
+      await emailjs.send(
+        'service_3fxpydd',
+        'template_9jc3c5w',
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject || form.name,
+          message: form.message,
+          email: form.email,
+          to_email: '1372710376@qq.com',
+        },
+        '0bJOETifyx6_UmzN8',
+      )
+      showToast('消息已发送成功！')
+      setForm({ name: '', email: '', subject: '', message: '' })
     } catch (err) {
-      showToast('发送失败，后端服务可能正在启动中（Render 免费版冷启动需要约30秒），请稍后重试')
+      showToast('发送失败，请稍后重试')
     } finally {
       setSubmitting(false)
     }
