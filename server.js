@@ -4,18 +4,21 @@ import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 import dns from 'dns'
 
-dns.setDefaultResultOrder('ipv4first')
-
 dotenv.config()
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 
+// 解析 smtp.qq.com 的 IPv4 地址（防止 Render 走 IPv6 连不上）
+const smtpHost = await dns.resolve4('smtp.qq.com').then(addrs => addrs[0]).catch(() => 'smtp.qq.com')
+console.log('SMTP 解析地址:', smtpHost)
+
 const transporter = nodemailer.createTransport({
-  host: 'smtp.qq.com',
+  host: smtpHost,
   port: 465,
   secure: true,
+  servername: 'smtp.qq.com',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
