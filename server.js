@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 // 解析 smtp.qq.com 的 IPv4 地址（防止 Render 走 IPv6 连不上）
-const smtpHost = await dns.resolve4('smtp.qq.com').then(addrs => addrs[0]).catch(() => 'smtp.qq.com')
+const smtpHost = await dns.promises.resolve4('smtp.qq.com').then(addrs => addrs[0]).catch(() => 'smtp.qq.com')
 console.log('SMTP 解析地址:', smtpHost)
 
 const transporter = nodemailer.createTransport({
