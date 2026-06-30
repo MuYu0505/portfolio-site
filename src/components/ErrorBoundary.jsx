@@ -9,7 +9,7 @@ const styles = {
     height: '100vh',
     background: '#10101c',
     color: '#e0e0e0',
-    fontFamily: "'Inter', 'Noto Sans SC', sans-serif",
+    fontFamily: "'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif",
     padding: '2rem',
     textAlign: 'center',
   },
