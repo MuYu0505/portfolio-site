@@ -2,6 +2,9 @@ import express from 'express'
 import cors from 'cors'
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
+import dns from 'dns'
+
+dns.setDefaultResultOrder('ipv4first')
 
 dotenv.config()
 
@@ -10,7 +13,9 @@ app.use(cors())
 app.use(express.json())
 
 const transporter = nodemailer.createTransport({
-  service: 'qq',
+  host: 'smtp.qq.com',
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
