@@ -5,7 +5,7 @@ const siteConfig = {
   location: '广州',
   resumePath: '/陈伟鹏_软件工程.pdf',
   // 后端 API 地址，部署后改为 Render 提供的地址
-  apiBase: '',
+  apiBase: 'https://portfolio-site-l6mj.onrender.com',
 }
 
 export default siteConfig
