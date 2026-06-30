@@ -116,11 +116,10 @@ export default function ParticleBackground() {
       }
     }
 
-    const isMobile = window.innerWidth < 768
-    const starCount = isMobile ? 50 : Math.min(200, Math.floor((canvas.width * canvas.height) / 5000))
+    const starCount = Math.min(200, Math.floor((canvas.width * canvas.height) / 5000))
     for (let i = 0; i < starCount; i++) stars.push(new Star())
 
-    const nodeCount = isMobile ? 15 : Math.min(60, Math.floor((canvas.width * canvas.height) / 20000))
+    const nodeCount = Math.min(60, Math.floor((canvas.width * canvas.height) / 20000))
     for (let i = 0; i < nodeCount; i++) nodes.push(new Node())
 
     const connectNodes = () => {
