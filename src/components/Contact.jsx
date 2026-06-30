@@ -51,13 +51,30 @@ export default function Contact() {
 
     setSubmitting(true)
     try {
-      const apiUrl = siteConfig.apiBase
-        ? `${siteConfig.apiBase}/api/send`
-        : '/api/send'
-      const res = await fetch(apiUrl, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          access_key: '9c3a508f-4b67-4ff8-8ea7-decaf170a228',
+          subject: form.subject || `来自个人网站 - ${form.name}`,
+          from_name: form.name,
+          replyto: form.email,
+          message: [
+            '═══════════════════════════════',
+            '     个人网站 / 联系表单消息',
+            '═══════════════════════════════',
+            '',
+            `发件人：${form.name}`,
+            `邮　箱：${form.email}`,
+            `主　题：${form.subject || '（未填写）'}`,
+            '',
+            '──────────── 消息内容 ────────────',
+            '',
+            form.message,
+            '',
+            '═══════════════════════════════',
+          ].join('\n'),
+        }),
       })
       if (res.ok) {
         showToast('消息已发送成功！')
