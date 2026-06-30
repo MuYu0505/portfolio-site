@@ -60,10 +60,11 @@ export default function Contact() {
         showToast('消息已发送成功！')
         setForm({ name: '', email: '', subject: '', message: '' })
       } else {
-        showToast('发送失败，请稍后重试')
+        const data = await res.json().catch(() => ({}))
+        showToast(data.error || '发送失败，请稍后重试')
       }
-    } catch {
-      showToast('发送失败，请稍后重试')
+    } catch (err) {
+      showToast('发送失败，后端服务可能正在启动中（Render 免费版冷启动需要约30秒），请稍后重试')
     } finally {
       setSubmitting(false)
     }
