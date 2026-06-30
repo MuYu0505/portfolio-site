@@ -1,0 +1,254 @@
+.autotest-demo {
+  height: 100%;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* ===== Left: Survey Preview ===== */
+.atd-left {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.atd-survey {
+  flex: 1;
+  padding: 0.6rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.atd-survey-title {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.atd-q {
+  padding: 0.5rem 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.atd-q.active {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.atd-q-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.atd-q-badge {
+  padding: 1px 6px;
+  background: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.atd-q-type {
+  font-size: 0.62rem;
+  color: #555;
+}
+
+.atd-q-title {
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-bottom: 4px;
+}
+
+.atd-q-opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.atd-opt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  color: #888;
+  transition: all 0.3s;
+}
+
+.atd-opt.selected {
+  border-color: rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+}
+
+.atd-opt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #555;
+  transition: all 0.3s;
+}
+
+.atd-opt.selected .atd-opt-dot {
+  border-color: #22c55e;
+  background: #22c55e;
+  box-shadow: inset 0 0 0 2px rgba(10, 10, 15, 0.8);
+}
+
+.atd-q-input {
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  color: #4ade80;
+  min-height: 18px;
+}
+
+.atd-cursor {
+  animation: atdBlink 1s infinite;
+  color: #6366f1;
+}
+
+@keyframes atdBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== Right: Log Panel ===== */
+.atd-right {
+  width: 260px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.atd-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.atd-panel-icon {
+  font-size: 0.9rem;
+}
+
+.atd-panel-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ccc;
+  flex: 1;
+}
+
+.atd-status {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.atd-status.running {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  animation: atdBlink 1.5s infinite;
+}
+
+.atd-status.done {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.atd-log-area {
+  flex: 1;
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.atd-log-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.atd-log-line.ai {
+  background: rgba(139, 92, 246, 0.06);
+  border-left: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.atd-log-line.done {
+  background: rgba(34, 197, 94, 0.06);
+  border-left: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.atd-log-time {
+  color: #444;
+  flex-shrink: 0;
+}
+
+.atd-log-tag {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+}
+
+.atd-log-msg {
+  color: #aaa;
+  word-break: break-all;
+}
+
+.atd-log-line.ai .atd-log-msg {
+  color: #c084fc;
+}
+
+.atd-log-line.done .atd-log-msg {
+  color: #4ade80;
+}
+
+.atd-log-cursor {
+  color: #6366f1;
+  font-size: 0.7rem;
+  animation: atdBlink 0.8s infinite;
+}
+
+.atd-tech-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.62rem;
+  color: #888;
+}
+
+.atd-tech-tag {
+  padding: 1px 6px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 3px;
+  color: #fbbf24;
+  font-size: 0.58rem;
+}

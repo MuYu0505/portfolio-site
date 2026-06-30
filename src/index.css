@@ -1,0 +1,135 @@
+:root,
+[data-theme="dark"] {
+  --bg-primary: #10101c;
+  --bg-secondary: #0d0d17;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaa;
+  --text-muted: #777;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(129, 140, 248, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(16, 16, 28, 0.85);
+  --dot-label-bg: rgba(20, 20, 35, 0.85);
+  --dot-label-color: rgba(255, 255, 255, 0.6);
+  --dot-label-border: rgba(255, 255, 255, 0.1);
+  --dot-inactive-bg: rgba(255, 255, 255, 0.35);
+  --dot-inactive-border: rgba(255, 255, 255, 0.5);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: rgba(129, 140, 248, 0.4);
+  --skill-track: rgba(255, 255, 255, 0.06);
+  --skill-card-bg: rgba(255, 255, 255, 0.04);
+  --skill-card-border: rgba(255, 255, 255, 0.07);
+  --skill-card-hover-bg: rgba(255, 255, 255, 0.06);
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tag-border: rgba(255, 255, 255, 0.1);
+  --tag-color: #aaa;
+  --card-glow: rgba(99, 102, 241, 0.2);
+  --code-bg: rgba(0, 0, 0, 0.3);
+  --exp-metric-bg: rgba(0, 0, 0, 0.2);
+  --badge-bg: rgba(99, 102, 241, 0.1);
+  --badge-border: rgba(99, 102, 241, 0.2);
+  --badge-color: #a5b4fc;
+  --social-icon-bg: rgba(99, 102, 241, 0.1);
+  --social-icon-border: rgba(99, 102, 241, 0.2);
+  --contact-icon-bg: rgba(99, 102, 241, 0.1);
+  --contact-icon-border: rgba(99, 102, 241, 0.2);
+  --outline-btn-bg: rgba(255, 255, 255, 0.05);
+  --outline-btn-border: rgba(255, 255, 255, 0.15);
+  --outline-btn-color: #ccc;
+  --mock-bg: rgba(255, 255, 255, 0.03);
+  --mock-border: rgba(255, 255, 255, 0.06);
+  --mock-sidebar-bg: rgba(0, 0, 0, 0.3);
+  --mock-topbar-bg: rgba(0, 0, 0, 0.2);
+  --form-label-color: #888;
+  --pd-tag-bg: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef2f7;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: rgba(0, 0, 0, 0.06);
+  --border-hover: rgba(99, 102, 241, 0.35);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --nav-bg: rgba(248, 250, 252, 0.88);
+  --dot-label-bg: rgba(255, 255, 255, 0.92);
+  --dot-label-color: #64748b;
+  --dot-label-border: rgba(0, 0, 0, 0.1);
+  --dot-inactive-bg: rgba(0, 0, 0, 0.2);
+  --dot-inactive-border: rgba(0, 0, 0, 0.35);
+  --input-bg: rgba(0, 0, 0, 0.02);
+  --input-border: rgba(0, 0, 0, 0.1);
+  --input-focus-border: rgba(99, 102, 241, 0.5);
+  --skill-track: rgba(0, 0, 0, 0.06);
+  --skill-card-bg: rgba(0, 0, 0, 0.02);
+  --skill-card-border: rgba(0, 0, 0, 0.06);
+  --skill-card-hover-bg: rgba(0, 0, 0, 0.04);
+  --tag-bg: rgba(0, 0, 0, 0.04);
+  --tag-border: rgba(0, 0, 0, 0.08);
+  --tag-color: #555;
+  --card-glow: rgba(99, 102, 241, 0.08);
+  --code-bg: rgba(0, 0, 0, 0.03);
+  --exp-metric-bg: rgba(0, 0, 0, 0.03);
+  --badge-bg: rgba(99, 102, 241, 0.08);
+  --badge-border: rgba(99, 102, 241, 0.15);
+  --badge-color: #4f46e5;
+  --social-icon-bg: rgba(99, 102, 241, 0.08);
+  --social-icon-border: rgba(99, 102, 241, 0.15);
+  --contact-icon-bg: rgba(99, 102, 241, 0.08);
+  --contact-icon-border: rgba(99, 102, 241, 0.2);
+  --outline-btn-bg: rgba(0, 0, 0, 0.03);
+  --outline-btn-border: rgba(0, 0, 0, 0.12);
+  --outline-btn-color: #334155;
+  --mock-bg: rgba(0, 0, 0, 0.02);
+  --mock-border: rgba(0, 0, 0, 0.05);
+  --mock-sidebar-bg: rgba(0, 0, 0, 0.02);
+  --mock-topbar-bg: rgba(0, 0, 0, 0.02);
+  --form-label-color: #475569;
+  --pd-tag-bg: rgba(0, 0, 0, 0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+  border-radius: 3px;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+}

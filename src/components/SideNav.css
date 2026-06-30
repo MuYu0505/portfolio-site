@@ -1,0 +1,84 @@
+.side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.side-nav-dot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: row-reverse;
+}
+
+.dot-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot-inactive-bg);
+  border: 1.5px solid var(--dot-inactive-border);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.side-nav-dot:hover .dot-circle {
+  background: rgba(129, 140, 248, 0.6);
+  border-color: #818cf8;
+  transform: scale(1.3);
+}
+
+.side-nav-dot.active .dot-circle {
+  background: #818cf8;
+  border-color: #a78bfa;
+  box-shadow: 0 0 12px rgba(129, 140, 248, 0.6);
+  transform: scale(1.3);
+}
+
+.dot-label {
+  font-size: 0.72rem;
+  color: var(--dot-label-color);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: var(--dot-label-bg);
+  backdrop-filter: blur(10px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dot-label-border);
+}
+
+.side-nav-dot:hover .dot-label {
+  color: var(--text-primary);
+}
+
+.side-nav-dot.active .dot-label {
+  color: #a78bfa;
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    right: 8px;
+    gap: 18px;
+  }
+  .side-nav-dot {
+    padding: 8px;
+  }
+  .dot-circle {
+    width: 14px;
+    height: 14px;
+  }
+  .dot-label {
+    display: none;
+  }
+}

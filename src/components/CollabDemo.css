@@ -1,0 +1,253 @@
+.collab-demo {
+  height: 100%;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+.cd-user-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.4rem;
+}
+
+.cd-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cd-user-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.cd-user-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.cd-mode-badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.cd-mode-badge.normal {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+}
+
+.cd-mode-badge.collab {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+}
+
+.cd-prev-answer {
+  padding: 6px 10px;
+  background: rgba(251, 191, 36, 0.08);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.15);
+  font-size: 0.7rem;
+  color: #fbbf24;
+  overflow: hidden;
+}
+
+.cd-progress {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cd-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.5s ease;
+}
+
+.cd-progress-fill.collab {
+  background: linear-gradient(90deg, #ec4899, #f472b6);
+}
+
+.cd-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cd-nav-label {
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.cd-nav-q {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.cd-question {
+  flex: 1;
+  padding: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cd-question.readonly {
+  opacity: 0.85;
+}
+
+.cd-q-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 0.8rem;
+}
+
+.cd-q-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cd-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #aaa;
+  transition: all 0.3s;
+}
+
+.cd-opt.selected {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(99, 102, 241, 0.1);
+  color: #fff;
+}
+
+.cd-opt.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cd-opt-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.cd-opt.selected .cd-opt-dot {
+  border-color: #6366f1;
+  background: #6366f1;
+  box-shadow: inset 0 0 0 3px rgba(10, 10, 15, 0.8);
+}
+
+.cd-actions {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  justify-content: center;
+}
+
+.cd-btn {
+  padding: 6px 20px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.cd-btn.next {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.cd-btn.prev {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #aaa;
+}
+
+.cd-btn.disabled-btn {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cd-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.cd-sync-icon {
+  font-size: 1rem;
+  color: #6366f1;
+  opacity: 0.6;
+}
+
+/* ===== Endpage ===== */
+.cd-endpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.cd-endpage.success {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 12px;
+}
+
+.cd-end-inner {
+  text-align: center;
+}
+
+.cd-end-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cd-end-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #22c55e;
+  margin-bottom: 0.3rem;
+}
+
+.cd-end-desc {
+  font-size: 0.78rem;
+  color: #888;
+}
